@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ddeeff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#results-container {
+  height: 60%;
+  width: 95%;
+  background-color: white;
+  border-radius: 60px;
+  box-shadow: 3px 3px 5px;
+  font-size: 1.8rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto 1fr 1fr; 
+  grid-template-areas:
+    "location location"
+    "main temp"
+    "humidity wind"; 
+}
+
+#results-container * {
+  display: none;
+}
+
+#location {
+  grid-area: location;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#main-wrapper {
+  grid-area: main;
+  display: flex;
+}
+
+#weather-icon {
+  position: relative;
+  top: 1rem;
+}
+
+#temp-wrapper {
+  grid-area: temp;
+  display: flex;
+  flex-direction: vertical;
+}
+
+#humidity {
+  grid-area: humidity;
+}
+
+#wind-wrapper {
+  grid-area: wind;
+  display: flex;
+  flex-direction: vertical;
+}
+
+#selector-container {
+  height: 10%;
+  width: 95%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#selector-container * {
+  font-size: 1.5rem;
+}
