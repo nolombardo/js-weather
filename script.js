@@ -51,13 +51,16 @@ const weatherMap = {
 };
 
 async function showWeather() {
-  const selector = document.getElementById("weather-selector");
-  const city = selector.value;
+  let city = document.getElementById("city-field").value;
+  const country = document.getElementById("country-field").value;
 
   if (city === "") return;
+  city = city.charAt(0).toUpperCase() + city.slice(1);
+  if (country !== "") city += ", " + country.charAt(0).toUpperCase() + country.slice(1);
+
   const weather = await getWeather(city);
   if (!weather) {
-    alert("Something went wrong, please try again later");
+    alert("Weather data could not be found for the entered location");
     return;
   }
 
