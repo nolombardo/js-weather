@@ -6,15 +6,21 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  padding: 1rem;
+}
+
+#results-container, #selector-container {
+  width: 100%;
+  max-width: 800px;
 }
 
 #results-container {
   height: 60%;
-  width: 95%;
+  padding: 1.2rem;
   background-color: white;
   border-radius: 60px;
   box-shadow: 3px 3px 5px;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr; 
@@ -31,7 +37,7 @@ body {
 
 #location {
   grid-area: location;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 4vw, 2.4.rem);
   font-weight: bold;
 }
 
@@ -49,7 +55,7 @@ body {
 #temp-wrapper {
   grid-area: temp;
   display: flex;
-  flex-direction: vertical;
+  flex-direction: column;
 }
 
 #humidity {
@@ -59,12 +65,11 @@ body {
 #wind-wrapper {
   grid-area: wind;
   display: flex;
-  flex-direction: vertical;
+  flex-direction: column;
 }
 
 #selector-container {
   height: 10%;
-  width: 95%;
   background-color: white;
   border-radius: 20px;
   box-shadow: 3px 3px 5px;
@@ -74,9 +79,38 @@ body {
 }
 
 #selector-container * {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 #city-field, #country-field {
-  width: 20%;
+  width: 25%;
+}
+
+.wrapper {
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  #results-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "location"
+      "main"
+      "temp"
+      "humidity"
+      "wind";
+    padding: 1rem;
+    border-radius: 30px;
+  }
+
+  #selector-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+    padding: 1rem;
+  }
+
+  #city-field, #country-field {
+    width: 100%;
+  }
 }
