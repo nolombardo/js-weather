@@ -15,6 +15,7 @@ body {
 }
 
 #results-container {
+  margin-top: -30px;
   height: 60%;
   padding: 0.5rem;
   background-color: white;
@@ -70,10 +71,11 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 #selector-container * {
-  font-size: clamp(0.8rem, min(2.5vh, 3.5vw), 1.8rem);
+  font-size: clamp(1rem, min(2.5vw, 2.5vh), 1.8rem);
 }
 
 #city-field, #country-field {
@@ -81,24 +83,11 @@ body {
 }
 
 @media (max-width: 600px) {
-  #results-container {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "location"
-      "main"
-      "temp"
-      "humidity"
-      "wind";
-    padding: 1rem;
-    border-radius: 30px;
-  }
-
   #selector-container {
     flex-direction: column;
     gap: 0.5rem;
     height: auto;
     padding: 1rem;
-    margin-bottom: 2rem;
   }
 
   #city-field, #country-field {
@@ -106,6 +95,10 @@ body {
   }
   
   @media (max-height: 700px) {
+    #selector-container * {
+      font-size: 0.8rem;
+    }
+    
     #selector-container p {
       display: none;
     }
