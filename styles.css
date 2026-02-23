@@ -20,11 +20,11 @@ body {
   background-color: white;
   border-radius: 60px;
   box-shadow: 3px 3px 5px;
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: clamp(0.8rem, min(3vh, 4vw), 1.8rem);
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr; 
-  grid-template-rows: auto 1fr 1fr; 
+  grid-template-rows: auto auto auto;
   grid-template-areas:
     "location location"
     "main temp"
@@ -37,13 +37,11 @@ body {
 
 #location {
   grid-area: location;
-  font-size: clamp(1.6rem, 4vw, 2.4.rem);
   font-weight: bold;
 }
 
 #main-wrapper {
   grid-area: main;
-  display: flex;
 }
 
 #weather-icon {
@@ -54,8 +52,6 @@ body {
 
 #temp-wrapper {
   grid-area: temp;
-  display: flex;
-  flex-direction: column;
 }
 
 #humidity {
@@ -64,8 +60,6 @@ body {
 
 #wind-wrapper {
   grid-area: wind;
-  display: flex;
-  flex-direction: column;
 }
 
 #selector-container {
@@ -79,15 +73,11 @@ body {
 }
 
 #selector-container * {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(0.8rem, min(2.5vh, 3.5vw), 1.8rem);
 }
 
 #city-field, #country-field {
   width: 25%;
-}
-
-.wrapper {
-  gap: 0.5rem;
 }
 
 @media (max-width: 600px) {
@@ -113,5 +103,11 @@ body {
 
   #city-field, #country-field {
     width: 100%;
+  }
+  
+  @media (max-height: 700px) {
+    #selector-container p {
+      display: none;
+    }
   }
 }
